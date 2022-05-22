@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Configuration;
+using System.Data.SqlClient;
+
+
+namespace Basta
+{
+    class Konekcija
+    {
+        static public SqlConnection Povezivanje()
+        {
+            string CS;
+            CS = ConfigurationManager.ConnectionStrings["kucni"].ConnectionString;
+            SqlConnection veza = new SqlConnection(CS);
+            return veza;
+        }
+    }
+}
